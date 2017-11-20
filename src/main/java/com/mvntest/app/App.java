@@ -19,14 +19,14 @@ public class App
     	//App obj = new App();
         //System.out.println( "Unique ID: " + obj.generateUniqueKey() );
     	
-    	System.out.println("Maven + Hibernate + MySQL");
+    	System.out.println("Maven + Hibernate + MySQL (with annotation)");
     	Session session = HibernateUtil.getSessionFactory().openSession();
     	
     	session.beginTransaction();
     	DBUser user = new DBUser();
     	
-    	user.setUserId(10);
-    	user.setUsername("superman");
+    	user.setUserId(11);
+    	user.setUsername("xman");
     	user.setCreatedBy("system");
     	user.setCreatedDate(new Date());
     	

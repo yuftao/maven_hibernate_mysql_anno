@@ -2,11 +2,29 @@ package com.mvntest.user;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "DBUSER")
 public class DBUser implements java.io.Serializable {
 
+	@Id
+	@Column(name = "USER_ID", unique = true, nullable = false, precision = 5, scale = 0)
 	private int userId;
+
+	@Column(name = "USERNAME", nullable = false, length = 20)
 	private String username;
+	
+	@Column(name = "CREATED_BY", nullable = false, length = 20)
 	private String createdBy;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name = "CREATED_DATE", nullable = false, length = 7)
 	private Date createdDate;
 	
 	public DBUser() {
